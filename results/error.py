@@ -36,6 +36,7 @@ slope_y = df_slope[y_column].tolist()
 
 num_points = 0
 mae = 0
+errors = []
 for i in range(len(baseline_x)):
     x = baseline_x[i]
     y = baseline_y[i]
@@ -51,10 +52,12 @@ for i in range(len(baseline_x)):
         y1 = slope_y[j1]
         y2 = slope_y[j2]
         y_lin = ((y2-y1)/(x2-x1))*(x-x1) + y1
+        errors.append(abs(np.power((y-y_lin), 1)))
         mae += abs(np.power((y-y_lin), 1))
     num_points+=1
 
 mae = (mae/num_points)
 
 print("error ", mae)
+print(errors)
 
