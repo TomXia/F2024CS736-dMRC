@@ -1,0 +1,6 @@
+Workload,Error
+Random,0.0032404687499999925
+Sequential,0.03515625
+Bigtable,0.0
+Spanner,0.0
+App,0.0008182968749999991
