@@ -43,6 +43,7 @@ for i in range(len(baseline_x)):
     if x in slope_x:
         j = slope_x.index(x)
         mae += abs(np.power((y-slope_y[j]), 1))
+        errors.append(abs(np.power((y-slope_y[j]), 1)))
     else:
         x1, x2 = find_neighbors(slope_x, x)
         if x1 == None or x2 == None:
